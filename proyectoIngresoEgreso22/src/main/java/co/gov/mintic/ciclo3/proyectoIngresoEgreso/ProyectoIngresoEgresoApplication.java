@@ -14,7 +14,7 @@ public class ProyectoIngresoEgresoApplication {
 
 		//comentario
 
-
+		System.out.println(datos.toString());
 
 	}
 

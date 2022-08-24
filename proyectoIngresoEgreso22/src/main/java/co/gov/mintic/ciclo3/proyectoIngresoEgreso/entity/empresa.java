@@ -79,5 +79,7 @@ public class empresa {
         String name1;
         System.out.println("ingrese nombre empresa: ");
         name1 = name.nextLine();
+        this.nombreEmpresa = name1;
+
     }
 }
