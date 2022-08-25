@@ -1,5 +1,7 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity;
 
+import java.util.Scanner;
+
 public class movimientoDinero {
     private double montoMovimiento;
     private double montoPositivo;
@@ -11,6 +13,10 @@ public class movimientoDinero {
         this.montoPositivo = montoPositivo;
         this.montoNegativo = montoNegativo;
         this.idEmpleadoMovimiento = idEmpleadoMovimiento;
+    }
+
+    public movimientoDinero() {
+
     }
 
     public double getMontoMovimiento() {
@@ -53,5 +59,37 @@ public class movimientoDinero {
                 ", montoNegativo=" + montoNegativo +
                 ", idEmpleadoMovimiento=" + idEmpleadoMovimiento +
                 '}';
+    }
+
+    public void setMontoMovimiento() {
+        Scanner montoDinero = new Scanner(System.in);
+        double cantidadCapital;
+        System.out.println("ingrese el monto del movimiento: ");
+        cantidadCapital = montoDinero.nextDouble();
+        this.montoMovimiento = cantidadCapital;
+    }
+
+    public void setMontoPositivo() {
+        Scanner montoPositivo = new Scanner(System.in);
+        double cantidadPositiva;
+        System.out.println("ingrese el monto positivo del movimiento: ");
+        cantidadPositiva = montoPositivo.nextDouble();
+        this.montoPositivo = cantidadPositiva;
+    }
+
+    public void setMontoNegativo() {
+        Scanner montoNegativo = new Scanner(System.in);
+        double cantidadNegativa;
+        System.out.println("ingrese el monto negativo del movimiento: ");
+        cantidadNegativa = montoNegativo.nextDouble();
+        this.montoNegativo = cantidadNegativa;
+    }
+
+    public void setIdEmpleadoMovimiento() {
+        Scanner idEmpleado = new Scanner(System.in);
+        double numId;
+        System.out.println("ingrese el el id de la persona quien realiza el movimiento: ");
+        numId = idEmpleado.nextDouble();
+        this.idEmpleadoMovimiento = numId;
     }
 }

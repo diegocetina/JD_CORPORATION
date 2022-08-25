@@ -82,4 +82,34 @@ public class empresa {
         this.nombreEmpresa = name1;
 
     }
+    public void setDireccion() {
+        Scanner direccion = new Scanner(System.in);
+        String direccionEmpresa;
+        System.out.println("ingrese direccion de la empresa: ");
+        direccionEmpresa = direccion.nextLine();
+        this.direccion = direccionEmpresa;
+    }
+    public void setTelefono() {
+        Scanner telefono = new Scanner(System.in);
+        int numTel;
+        System.out.println("ingrese telefono de la empresa: ");
+        numTel = telefono.nextInt();
+        this.telefono = numTel;
+    }
+
+    public void setNIT() {
+        Scanner nit = new Scanner(System.in);
+        String numNit;
+        System.out.println("ingrese el Nit de la empresa: ");
+        numNit = nit.nextLine();
+        this.NIT = numNit;
+    }
+
+    public void setIdAdministrador() {
+        Scanner idAdmin = new Scanner(System.in);
+        double numId;
+        System.out.println("ingrese el ID del Administrador: ");
+        numId = idAdmin.nextDouble();
+        this.idAdministrador = numId;
+    }
 }
