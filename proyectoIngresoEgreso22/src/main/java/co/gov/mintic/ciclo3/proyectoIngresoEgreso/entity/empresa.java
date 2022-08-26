@@ -63,16 +63,6 @@ public class empresa {
         this.idAdministrador = idAdministrador;
     }
 
-    @Override
-    public String toString() {
-        return "empresa{" +
-                "nombreEmpresa='" + nombreEmpresa + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono=" + telefono +
-                ", NIT='" + NIT + '\'' +
-                ", idAdministrador=" + idAdministrador +
-                '}';
-    }
 
     public void setNombreEmpresa() {
         Scanner name = new Scanner(System.in);
@@ -111,5 +101,15 @@ public class empresa {
         System.out.println("ingrese el ID del Administrador: ");
         numId = idAdmin.nextDouble();
         this.idAdministrador = numId;
+    }
+
+    public String toString() {
+        return "empresa{" +
+                "nombreEmpresa='" + nombreEmpresa + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono=" + telefono +
+                ", NIT='" + NIT + '\'' +
+                ", idAdministrador=" + idAdministrador +
+                '}';
     }
 }

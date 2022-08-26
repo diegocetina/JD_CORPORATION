@@ -20,9 +20,13 @@ public class ProyectoIngresoEgresoApplication {
 						+ "2. Crear empleado\n"
 						+ "3. Nuevo movimiento de dinero");
 		dato = seleccion.nextInt();
+
+		empresa datos = new empresa();
+		empleado employed = new empleado();
+		movimientoDinero dinero = new movimientoDinero();
 		switch (dato) {
 			case 1:
-				empresa datos = new empresa();
+
 				datos.setNombreEmpresa();
 				datos.setDireccion();
 				datos.setTelefono();
@@ -31,7 +35,7 @@ public class ProyectoIngresoEgresoApplication {
 				System.out.println(datos.toString());
 				break;
 			case 2:
-				empleado employed = new empleado();
+
 				employed.setNombreEmpleado();
 				employed.setCorreo();
 				employed.setEmpresaPerteneciente();
@@ -39,7 +43,7 @@ public class ProyectoIngresoEgresoApplication {
 				System.out.println(employed.toString());
 				break;
 			case 3:
-				movimientoDinero dinero = new movimientoDinero();
+
 				dinero.setMontoMovimiento();
 				dinero.setMontoPositivo();
 				dinero.setMontoNegativo();
@@ -51,6 +55,9 @@ public class ProyectoIngresoEgresoApplication {
 				break;
 
 		}
+
+
+
 
 		int opcion;
 		Scanner seleccion_1 = new Scanner(System.in);
@@ -68,18 +75,22 @@ public class ProyectoIngresoEgresoApplication {
 						+ "2. EMPLEADO\n"
 						+  "3.MOVIMIENTOS");
 				sel= seleccion_2.nextInt();
+
 				switch (dato) {
 					case 1:
-						empresa datos = new empresa();
+						System.out.println("DATOS ANTIGUIOS");
+						System.out.println(datos.toString());
 						datos.setNombreEmpresa();
 						datos.setDireccion();
 						datos.setTelefono();
 						datos.setNIT();
 						datos.setIdAdministrador();
 						System.out.println(datos.toString());
+
 						break;
 					case 2:
-						empleado employed = new empleado();
+						System.out.println("DATOS ANTIGUIOS");
+						System.out.println(employed.toString());
 						employed.setNombreEmpleado();
 						employed.setCorreo();
 						employed.setEmpresaPerteneciente();
@@ -87,12 +98,14 @@ public class ProyectoIngresoEgresoApplication {
 						System.out.println(employed.toString());
 						break;
 					case 3:
-						movimientoDinero dinero = new movimientoDinero();
+						System.out.println("DATOS ANTIGUIOS");
+						System.out.println(dinero.toString());
 						dinero.setMontoMovimiento();
 						dinero.setMontoPositivo();
 						dinero.setMontoNegativo();
 						dinero.setIdEmpleadoMovimiento();
 						System.out.println(dinero.toString());
+
 						break;
 					default:
 						System.out.println("opcion no valida reincie el programa");
