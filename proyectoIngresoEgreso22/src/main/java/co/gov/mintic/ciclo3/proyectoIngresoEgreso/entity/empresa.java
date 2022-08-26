@@ -70,7 +70,6 @@ public class empresa {
         System.out.println("ingrese nombre empresa: ");
         name1 = name.nextLine();
         this.nombreEmpresa = name1;
-
     }
     public void setDireccion() {
         Scanner direccion = new Scanner(System.in);
@@ -81,7 +80,7 @@ public class empresa {
     }
     public void setTelefono() {
         Scanner telefono = new Scanner(System.in);
-        int numTel;
+        int numTel = 0;
         System.out.println("ingrese telefono de la empresa: ");
         numTel = telefono.nextInt();
         this.telefono = numTel;
