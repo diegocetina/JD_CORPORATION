@@ -105,7 +105,7 @@ public class ProyectoIngresoEgresoApplication {
 				break;
 			default:
 				System.out.println("opcion no valida reincie el programa");
-				break;
+				break; //test para cambios
 		}
 	}
 
