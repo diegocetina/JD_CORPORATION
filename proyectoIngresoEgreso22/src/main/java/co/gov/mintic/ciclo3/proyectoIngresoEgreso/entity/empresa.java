@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class empresa {
     private String nombreEmpresa;
     private String direccion;
-    private int telefono;
+    private String telefono;
     private String NIT;
-    private double idAdministrador;
+    private long idAdministrador;
 
-    public empresa(String nombreEmpresa, String direccion, int telefono, String NIT, double idAdministrador) {
+    public empresa(String nombreEmpresa, String direccion, String telefono, String NIT, long idAdministrador) {
         this.nombreEmpresa = nombreEmpresa;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -27,7 +27,6 @@ public class empresa {
     }
 
     public void setNombreEmpresa(String nombreEmpresa) {
-
         this.nombreEmpresa = nombreEmpresa;
     }
 
@@ -39,11 +38,11 @@ public class empresa {
         this.direccion = direccion;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
@@ -55,14 +54,24 @@ public class empresa {
         this.NIT = NIT;
     }
 
-    public double getIdAdministrador() {
+    public long getIdAdministrador() {
         return idAdministrador;
     }
 
-    public void setIdAdministrador(double idAdministrador) {
+    public void setIdAdministrador(long idAdministrador) {
         this.idAdministrador = idAdministrador;
     }
 
+    @Override
+    public String toString() {
+        return "empresa{" +
+                "nombreEmpresa='" + nombreEmpresa + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", NIT='" + NIT + '\'' +
+                ", idAdministrador=" + idAdministrador +
+                '}';
+    }
 
     public void setNombreEmpresa() {
         Scanner name = new Scanner(System.in);
@@ -80,9 +89,9 @@ public class empresa {
     }
     public void setTelefono() {
         Scanner telefono = new Scanner(System.in);
-        int numTel = 0;
+        String numTel = "";
         System.out.println("ingrese telefono de la empresa: ");
-        numTel = telefono.nextInt();
+        numTel = telefono.nextLine();
         this.telefono = numTel;
     }
 
@@ -96,19 +105,10 @@ public class empresa {
 
     public void setIdAdministrador() {
         Scanner idAdmin = new Scanner(System.in);
-        double numId;
+        long numId;
         System.out.println("ingrese el ID del Administrador: ");
-        numId = idAdmin.nextDouble();
+        numId = idAdmin.nextLong();
         this.idAdministrador = numId;
     }
 
-    public String toString() {
-        return "empresa{" +
-                "nombreEmpresa='" + nombreEmpresa + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono=" + telefono +
-                ", NIT='" + NIT + '\'' +
-                ", idAdministrador=" + idAdministrador +
-                '}';
-    }
 }

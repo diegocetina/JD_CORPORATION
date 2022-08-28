@@ -20,17 +20,17 @@ public class ProyectoIngresoEgresoApplication {
 						+ "2. Crear empleado\n"
 						+ "3. Nuevo movimiento de dinero");
 		dato = seleccion.nextInt();
-		empresa datos = new empresa();
+		empresa empresa = new empresa();
 		empleado employed = new empleado();
 		movimientoDinero dinero = new movimientoDinero();
 		switch (dato) {
 			case 1:
-				datos.setNombreEmpresa();
-				datos.setDireccion();
-				datos.setTelefono();
-				datos.setNIT();
-				datos.setIdAdministrador();
-				System.out.println(datos.toString());
+				empresa.setNombreEmpresa();
+				empresa.setDireccion();
+				empresa.setTelefono();
+				empresa.setNIT();
+				empresa.setIdAdministrador();
+				System.out.println(empresa.toString());
 				break;
 			case 2:
 				employed.setNombreEmpleado();
@@ -66,17 +66,17 @@ public class ProyectoIngresoEgresoApplication {
 						+ "1. EMPRESA\n"
 						+ "2. EMPLEADO\n"
 						+ "3. MOVIMIENTOS");
-				sel= seleccion2.nextInt();
-				switch (dato) {
+				sel = seleccion2.nextInt();
+				switch (sel) {
 					case 1:
 						System.out.println("DATOS ANTIGUOS");
-						System.out.println(datos.toString());
-						datos.setNombreEmpresa();
-						datos.setDireccion();
-						datos.setTelefono();
-						datos.setNIT();
-						datos.setIdAdministrador();
-						System.out.println(datos.toString());
+						System.out.println(empresa.toString());
+						empresa.setNombreEmpresa();
+						empresa.setDireccion();
+						empresa.setTelefono();
+						empresa.setNIT();
+						empresa.setIdAdministrador();
+						System.out.println(empresa.toString());
 						break;
 					case 2:
 						System.out.println("DATOS ANTIGUOS");

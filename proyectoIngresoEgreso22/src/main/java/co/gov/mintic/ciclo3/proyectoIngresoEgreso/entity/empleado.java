@@ -7,9 +7,9 @@ public class empleado {
     private String correo;
     private String empresaPerteneciente;
     private Rol rol;
-    private double idEmpleado;
+    private long idEmpleado;
 
-    public empleado(String nombreEmpleado, String correo, String empresaPerteneciente, Rol rol, double idEmpleado) {
+    public empleado(String nombreEmpleado, String correo, String empresaPerteneciente, Rol rol, long idEmpleado) {
         this.nombreEmpleado = nombreEmpleado;
         this.correo = correo;
         this.empresaPerteneciente = empresaPerteneciente;
@@ -52,23 +52,12 @@ public class empleado {
         this.rol = rol;
     }
 
-    public double getIdEmpleado() {
+    public long getIdEmpleado() {
         return idEmpleado;
     }
 
-    public void setIdEmpleado(double idEmpleado) {
+    public void setIdEmpleado(long idEmpleado) {
         this.idEmpleado = idEmpleado;
-    }
-
-    @Override
-    public String toString() {
-        return "empleado{" +
-                "nombreEmpleado='" + nombreEmpleado + '\'' +
-                ", correo='" + correo + '\'' +
-                ", empresaPerteneciente='" + empresaPerteneciente + '\'' +
-                ", rol=" + rol +
-                ", idEmpleado=" + idEmpleado +
-                '}';
     }
 
     public void setNombreEmpleado() {
@@ -97,9 +86,9 @@ public class empleado {
 
     public void setIdEmpleado() {
         Scanner idEmple = new Scanner(System.in);
-        double numIdEmpleado;
+        long numIdEmpleado;
         System.out.println("ingrese id correspondiente del empleado: ");
-        numIdEmpleado = idEmple.nextDouble();
+        numIdEmpleado = idEmple.nextLong();
         this.idEmpleado = numIdEmpleado;
     }
 }
