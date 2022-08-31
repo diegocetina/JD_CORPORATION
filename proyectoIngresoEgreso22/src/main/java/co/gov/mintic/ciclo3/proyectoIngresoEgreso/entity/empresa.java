@@ -73,42 +73,42 @@ public class empresa {
                 '}';
     }
 
-    public void setNombreEmpresa() {
-        Scanner name = new Scanner(System.in);
-        String name1;
-        System.out.println("ingrese nombre empresa: ");
-        name1 = name.nextLine();
-        this.nombreEmpresa = name1;
-    }
-    public void setDireccion() {
-        Scanner direccion = new Scanner(System.in);
-        String direccionEmpresa;
-        System.out.println("ingrese direccion de la empresa: ");
-        direccionEmpresa = direccion.nextLine();
-        this.direccion = direccionEmpresa;
-    }
-    public void setTelefono() {
-        Scanner telefono = new Scanner(System.in);
-        String numTel = "";
-        System.out.println("ingrese telefono de la empresa: ");
-        numTel = telefono.nextLine();
-        this.telefono = numTel;
-    }
-
-    public void setNIT() {
-        Scanner nit = new Scanner(System.in);
-        String numNit;
-        System.out.println("ingrese el Nit de la empresa: ");
-        numNit = nit.nextLine();
-        this.NIT = numNit;
-    }
-
-    public void setIdAdministrador() {
-        Scanner idAdmin = new Scanner(System.in);
-        long numId;
-        System.out.println("ingrese el ID del Administrador: ");
-        numId = idAdmin.nextLong();
-        this.idAdministrador = numId;
-    }
+//    public void setNombreEmpresa() {
+//        Scanner name = new Scanner(System.in);
+//        String name1;
+//        System.out.println("ingrese nombre empresa: ");
+//        name1 = name.nextLine();
+//        this.nombreEmpresa = name1;
+//    }
+//    public void setDireccion() {
+//        Scanner direccion = new Scanner(System.in);
+//        String direccionEmpresa;
+//        System.out.println("ingrese direccion de la empresa: ");
+//        direccionEmpresa = direccion.nextLine();
+//        this.direccion = direccionEmpresa;
+//    }
+//    public void setTelefono() {
+//        Scanner telefono = new Scanner(System.in);
+//        String numTel = "";
+//        System.out.println("ingrese telefono de la empresa: ");
+//        numTel = telefono.nextLine();
+//        this.telefono = numTel;
+//    }
+//
+//    public void setNIT() {
+//        Scanner nit = new Scanner(System.in);
+//        String numNit;
+//        System.out.println("ingrese el Nit de la empresa: ");
+//        numNit = nit.nextLine();
+//        this.NIT = numNit;
+//    }
+//
+//    public void setIdAdministrador() {
+//        Scanner idAdmin = new Scanner(System.in);
+//        long numId;
+//        System.out.println("ingrese el ID del Administrador: ");
+//        numId = idAdmin.nextLong();
+//        this.idAdministrador = numId;
+//    }
 
 }
