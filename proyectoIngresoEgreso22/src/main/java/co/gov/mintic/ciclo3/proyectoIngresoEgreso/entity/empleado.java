@@ -60,35 +60,35 @@ public class empleado {
         this.idEmpleado = idEmpleado;
     }
 
-    public void setNombreEmpleado() {
-        Scanner empleado = new Scanner(System.in);
-        String nombreEmpleado;
-        System.out.println("ingrese nombre empleado: ");
-        nombreEmpleado = empleado.nextLine();
-        this.nombreEmpleado = nombreEmpleado;
-    }
-
-    public void setCorreo() {
-        Scanner correo = new Scanner(System.in);
-        String correoEmpleado;
-        System.out.println("ingrese correo empleado: ");
-        correoEmpleado = correo.nextLine();
-        this.correo = correoEmpleado;
-    }
-
-    public void setEmpresaPerteneciente() {
-        Scanner empresaPerma = new Scanner(System.in);
-        String nombreEmpresa;
-        System.out.println("ingrese nombre empresa a la que pertenece el empleado: ");
-        nombreEmpresa = empresaPerma.nextLine();
-        this.empresaPerteneciente = nombreEmpresa;
-    }
-
-    public void setIdEmpleado() {
-        Scanner idEmple = new Scanner(System.in);
-        long numIdEmpleado;
-        System.out.println("ingrese id correspondiente del empleado: ");
-        numIdEmpleado = idEmple.nextLong();
-        this.idEmpleado = numIdEmpleado;
-    }
+//    public void setNombreEmpleado() {
+//        Scanner empleado = new Scanner(System.in);
+//        String nombreEmpleado;
+//        System.out.println("ingrese nombre empleado: ");
+//        nombreEmpleado = empleado.nextLine();
+//        this.nombreEmpleado = nombreEmpleado;
+//    }
+//
+//    public void setCorreo() {
+//        Scanner correo = new Scanner(System.in);
+//        String correoEmpleado;
+//        System.out.println("ingrese correo empleado: ");
+//        correoEmpleado = correo.nextLine();
+//        this.correo = correoEmpleado;
+//    }
+//
+//    public void setEmpresaPerteneciente() {
+//        Scanner empresaPerma = new Scanner(System.in);
+//        String nombreEmpresa;
+//        System.out.println("ingrese nombre empresa a la que pertenece el empleado: ");
+//        nombreEmpresa = empresaPerma.nextLine();
+//        this.empresaPerteneciente = nombreEmpresa;
+//    }
+//
+//    public void setIdEmpleado() {
+//        Scanner idEmple = new Scanner(System.in);
+//        long numIdEmpleado;
+//        System.out.println("ingrese id correspondiente del empleado: ");
+//        numIdEmpleado = idEmple.nextLong();
+//        this.idEmpleado = numIdEmpleado;
+//    }
 }
