@@ -1,6 +1,6 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso.service;
 
-import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity.empleado;
+import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empleado;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

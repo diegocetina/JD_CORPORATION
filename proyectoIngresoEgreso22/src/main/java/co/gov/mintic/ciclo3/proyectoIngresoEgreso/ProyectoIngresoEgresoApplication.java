@@ -1,12 +1,7 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso;
 
-import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity.empleado;
-import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity.empresa;
-import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity.movimientoDinero;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import javax.swing.*;
-import java.util.Scanner;
 
 @SpringBootApplication
 public class ProyectoIngresoEgresoApplication {

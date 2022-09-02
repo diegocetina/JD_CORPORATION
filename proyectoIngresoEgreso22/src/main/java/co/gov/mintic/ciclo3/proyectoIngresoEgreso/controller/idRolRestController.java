@@ -1,11 +1,10 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso.controller;
 
-import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity.Rol;
-import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity.idRol;
+import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.idRol;
 import co.gov.mintic.ciclo3.proyectoIngresoEgreso.service.idRolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.ArrayList;
+
 import java.util.List;
 
 @RestController

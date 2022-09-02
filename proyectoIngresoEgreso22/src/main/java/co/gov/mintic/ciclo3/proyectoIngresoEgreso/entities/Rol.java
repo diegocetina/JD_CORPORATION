@@ -1,5 +1,7 @@
-package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity;
+package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities;
+import javax.persistence.*;
 
+//@Entity
 public class Rol {
     private String administrador;
     private String operativo;

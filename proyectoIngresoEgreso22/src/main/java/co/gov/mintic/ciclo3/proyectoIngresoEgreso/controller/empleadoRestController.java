@@ -1,12 +1,11 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso.controller;
 
 
-import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity.empleado;
+import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empleado;
 import co.gov.mintic.ciclo3.proyectoIngresoEgreso.service.empleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

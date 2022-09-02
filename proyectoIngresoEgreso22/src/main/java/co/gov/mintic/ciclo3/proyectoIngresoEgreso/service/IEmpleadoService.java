@@ -1,8 +1,6 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso.service;
 
-import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity.empleado;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empleado;
 
 import java.util.List;
 

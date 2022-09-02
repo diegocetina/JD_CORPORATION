@@ -1,7 +1,7 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso.service;
 
 
-import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity.idRol;
+import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.idRol;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

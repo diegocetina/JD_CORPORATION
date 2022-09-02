@@ -1,7 +1,4 @@
-package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity;
-
-import javax.swing.*;
-import java.util.Scanner;
+package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities;
 
 public class empresa {
     private String nombreEmpresa;

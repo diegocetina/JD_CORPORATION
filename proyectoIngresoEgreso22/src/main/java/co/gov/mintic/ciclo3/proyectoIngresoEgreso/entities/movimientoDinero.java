@@ -1,4 +1,4 @@
-package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entity;
+package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities;
 
 import java.util.Scanner;
 
