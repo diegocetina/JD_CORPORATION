@@ -8,10 +8,10 @@ public class empleado {
     private String nombreEmpleado;
     private String correo;
     private String empresaPerteneciente;
-    private Rol rol;
+    private idRol rol;
     private long idEmpleado;
 
-    public empleado(String nombreEmpleado, String correo, String empresaPerteneciente, Rol rol, long idEmpleado) {
+    public empleado(String nombreEmpleado, String correo, String empresaPerteneciente, idRol rol, long idEmpleado) {
         this.nombreEmpleado = nombreEmpleado;
         this.correo = correo;
         this.empresaPerteneciente = empresaPerteneciente;
@@ -45,12 +45,11 @@ public class empleado {
     public void setEmpresaPerteneciente(String empresaPerteneciente) {
         this.empresaPerteneciente = empresaPerteneciente;
     }
-
-    public Rol getRol() {
+    public idRol getRol() {
         return rol;
     }
 
-    public void setRol(Rol rol) {
+    public void setRol(idRol rol) {
         this.rol = rol;
     }
 

@@ -61,35 +61,35 @@ public class movimientoDinero {
                 '}';
     }
 
-    public void setMontoMovimiento() {
-        Scanner montoDinero = new Scanner(System.in);
-        float cantidadCapital;
-        System.out.println("ingrese el monto del movimiento: ");
-        cantidadCapital = montoDinero.nextFloat();
-        this.montoMovimiento = cantidadCapital;
-    }
-
-    public void setMontoPositivo() {
-        Scanner montoPositivo = new Scanner(System.in);
-        float cantidadPositiva;
-        System.out.println("ingrese el monto positivo del movimiento: ");
-        cantidadPositiva = montoPositivo.nextFloat();
-        this.montoPositivo = cantidadPositiva;
-    }
-
-    public void setMontoNegativo() {
-        Scanner montoNegativo = new Scanner(System.in);
-        float cantidadNegativa;
-        System.out.println("ingrese el monto negativo del movimiento: ");
-        cantidadNegativa = montoNegativo.nextFloat();
-        this.montoNegativo = cantidadNegativa;
-    }
-
-    public void setIdEmpleadoMovimiento() {
-        Scanner idEmpleado = new Scanner(System.in);
-        long numId;
-        System.out.println("ingrese el el id de la persona quien realiza el movimiento: ");
-        numId = idEmpleado.nextLong();
-        this.idEmpleadoMovimiento = numId;
-    }
+//    public void setMontoMovimiento() {
+//        Scanner montoDinero = new Scanner(System.in);
+//        float cantidadCapital;
+//        System.out.println("ingrese el monto del movimiento: ");
+//        cantidadCapital = montoDinero.nextFloat();
+//        this.montoMovimiento = cantidadCapital;
+//    }
+//
+//    public void setMontoPositivo() {
+//        Scanner montoPositivo = new Scanner(System.in);
+//        float cantidadPositiva;
+//        System.out.println("ingrese el monto positivo del movimiento: ");
+//        cantidadPositiva = montoPositivo.nextFloat();
+//        this.montoPositivo = cantidadPositiva;
+//    }
+//
+//    public void setMontoNegativo() {
+//        Scanner montoNegativo = new Scanner(System.in);
+//        float cantidadNegativa;
+//        System.out.println("ingrese el monto negativo del movimiento: ");
+//        cantidadNegativa = montoNegativo.nextFloat();
+//        this.montoNegativo = cantidadNegativa;
+//    }
+//
+//    public void setIdEmpleadoMovimiento() {
+//        Scanner idEmpleado = new Scanner(System.in);
+//        long numId;
+//        System.out.println("ingrese el el id de la persona quien realiza el movimiento: ");
+//        numId = idEmpleado.nextLong();
+//        this.idEmpleadoMovimiento = numId;
+//    }
 }
