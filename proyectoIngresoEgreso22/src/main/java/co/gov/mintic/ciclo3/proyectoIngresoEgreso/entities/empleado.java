@@ -1,14 +1,22 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities;
 
 
+import javax.persistence.*;
 
-
-
+@Entity
+@Table(name = "empleado") //se crea la tabla en base de datos@Entity
 public class empleado {
+    @Id
+    @Column(name = "nombres_empleado",nullable = false)
     private String nombreEmpleado;
+    @Column(name = "correo",nullable = false)
     private String correo;
+    @Column(name = "empresa_perteneciente",nullable = false)
     private String empresaPerteneciente;
+    @ManyToOne
+    @JoinColumn
     private idRol rol;
+    @Column(name = "id_empleado",nullable = false)
     private long idEmpleado;
 
     public empleado(String nombreEmpleado, String correo, String empresaPerteneciente, idRol rol, long idEmpleado) {

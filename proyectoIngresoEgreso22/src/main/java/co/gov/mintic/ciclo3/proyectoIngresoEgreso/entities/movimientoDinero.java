@@ -1,11 +1,18 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities;
 
-import java.util.Scanner;
-
+import javax.persistence.*;
+import java.util.Scanner.*;
+@Entity
+@Table(name = "movimiento_dinero") //se crea la tabla en base de datos@Entity
 public class movimientoDinero {
+    @Id
+    @Column(name = "monto_movimiento", nullable = false)
     private float montoMovimiento;
+    @Column(name = "monto_positivo")
     private float montoPositivo;
+    @Column(name = "monto_negativo")
     private float montoNegativo;
+    @Column(name = "id_empleado_movimiento",nullable = false)
     private long idEmpleadoMovimiento;
 
     public movimientoDinero(float montoMovimiento, float montoPositivo, float montoNegativo, long idEmpleadoMovimiento) {

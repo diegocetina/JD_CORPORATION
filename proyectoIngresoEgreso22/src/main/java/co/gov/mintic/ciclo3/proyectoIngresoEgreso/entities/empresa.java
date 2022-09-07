@@ -1,10 +1,21 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities;
 
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "empresa") //se crea la tabla en base de datos
 public class empresa {
+    @Id
+    @Column(name = "nombre_empresa", nullable = false)
     private String nombreEmpresa;
+    @Column(name = "direccion", nullable = false)
     private String direccion;
+    @Column(name = "telefono", nullable = false)
     private String telefono;
+    @Column(name = "nit", nullable = false)
     private String NIT;
+    @Column(name = "idAdministrador", nullable = false)
     private long idAdministrador;
 
     public empresa(String nombreEmpresa, String direccion, String telefono, String NIT, long idAdministrador) {
