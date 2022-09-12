@@ -2,32 +2,53 @@ package co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "empleado") //se crea la tabla en base de datos@Entity
 public class empleado {
     @Id
-    @Column(name = "nombres_empleado",nullable = false)
-    private String nombreEmpleado;
-    @Column(name = "correo",nullable = false)
-    private String correo;
-    @Column(name = "empresa_perteneciente",nullable = false)
-    private String empresaPerteneciente;
-    @ManyToOne
-    @JoinColumn
-    private idRol rol;
-    @Column(name = "id_empleado",nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_empleado")
     private long idEmpleado;
 
-    public empleado(String nombreEmpleado, String correo, String empresaPerteneciente, idRol rol, long idEmpleado) {
+    @Column(name = "nombres_empleado")
+    private String nombreEmpleado;
+    @Column(name = "correo")
+    private String correo;
+    @Column(name = "empresa_perteneciente")
+    private String empresaPerteneciente;
+    @Column(name = "id_Login_empleado")
+    private long idLogeo;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "rol_id_rol")
+    private idRol rol;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "empresa_id_empresa")
+    private empresa empresa;
+
+
+    public empleado(long idEmpleado, String nombreEmpleado, String correo, String empresaPerteneciente, long idLogeo, idRol rol, co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empresa empresa) {
+        this.idEmpleado = idEmpleado;
         this.nombreEmpleado = nombreEmpleado;
         this.correo = correo;
         this.empresaPerteneciente = empresaPerteneciente;
+        this.idLogeo = idLogeo;
         this.rol = rol;
-        this.idEmpleado = idEmpleado;
+        this.empresa = empresa;
     }
 
     public empleado() {
+    }
+
+    public long getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public void setIdEmpleado(long idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
     public String getNombreEmpleado() {
@@ -53,6 +74,15 @@ public class empleado {
     public void setEmpresaPerteneciente(String empresaPerteneciente) {
         this.empresaPerteneciente = empresaPerteneciente;
     }
+
+    public long getIdLogeo() {
+        return idLogeo;
+    }
+
+    public void setIdLogeo(long idLogeo) {
+        this.idLogeo = idLogeo;
+    }
+
     public idRol getRol() {
         return rol;
     }
@@ -61,15 +91,28 @@ public class empleado {
         this.rol = rol;
     }
 
-    public long getIdEmpleado() {
-        return idEmpleado;
+    public co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empresa getEmpresa() {
+        return empresa;
     }
 
-    public void setIdEmpleado(long idEmpleado) {
-        this.idEmpleado = idEmpleado;
+    public void setEmpresa(co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empresa empresa) {
+        this.empresa = empresa;
     }
 
-//    public void setNombreEmpleado() {
+    @Override
+    public String toString() {
+        return "empleado{" +
+                "idEmpleado=" + idEmpleado +
+                ", nombreEmpleado='" + nombreEmpleado + '\'' +
+                ", correo='" + correo + '\'' +
+                ", empresaPerteneciente='" + empresaPerteneciente + '\'' +
+                ", idLogeo=" + idLogeo +
+                ", rol=" + rol +
+                ", empresa=" + empresa +
+                '}';
+    }
+
+    //    public void setNombreEmpleado() {
 //        Scanner empleado = new Scanner(System.in);
 //        String nombreEmpleado;
 //        System.out.println("ingrese nombre empleado: ");

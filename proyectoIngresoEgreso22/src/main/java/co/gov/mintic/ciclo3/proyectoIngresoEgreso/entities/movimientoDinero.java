@@ -6,6 +6,8 @@ import java.util.Scanner.*;
 @Table(name = "movimiento_dinero") //se crea la tabla en base de datos@Entity
 public class movimientoDinero {
     @Id
+    @Column(name = "id_movimiento")
+    private long idmovimiento;
     @Column(name = "monto_movimiento", nullable = false)
     private float montoMovimiento;
     @Column(name = "monto_positivo")
@@ -14,12 +16,21 @@ public class movimientoDinero {
     private float montoNegativo;
     @Column(name = "id_empleado_movimiento",nullable = false)
     private long idEmpleadoMovimiento;
+    @ManyToOne
+    @JoinColumn
+    private empleado empleado;
+    @ManyToOne
+    @JoinColumn
+    private empresa empresa;
 
-    public movimientoDinero(float montoMovimiento, float montoPositivo, float montoNegativo, long idEmpleadoMovimiento) {
+    public movimientoDinero(long idmovimiento, float montoMovimiento, float montoPositivo, float montoNegativo, long idEmpleadoMovimiento, co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empleado empleado, co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empresa empresa) {
+        this.idmovimiento = idmovimiento;
         this.montoMovimiento = montoMovimiento;
         this.montoPositivo = montoPositivo;
         this.montoNegativo = montoNegativo;
         this.idEmpleadoMovimiento = idEmpleadoMovimiento;
+        this.empleado = empleado;
+        this.empresa = empresa;
     }
 
     public movimientoDinero() {
@@ -58,6 +69,30 @@ public class movimientoDinero {
         this.idEmpleadoMovimiento = idEmpleadoMovimiento;
     }
 
+    public co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empleado empleado) {
+        this.empleado = empleado;
+    }
+
+    public co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public long getIdmovimiento() {
+        return idmovimiento;
+    }
+
+    public void setIdmovimiento(long idmovimiento) {
+        this.idmovimiento = idmovimiento;
+    }
+
     @Override
     public String toString() {
         return "movimientoDinero{" +
@@ -65,10 +100,12 @@ public class movimientoDinero {
                 ", montoPositivo=" + montoPositivo +
                 ", montoNegativo=" + montoNegativo +
                 ", idEmpleadoMovimiento=" + idEmpleadoMovimiento +
+                ", empleado=" + empleado +
+                ", empresa=" + empresa +
                 '}';
     }
 
-//    public void setMontoMovimiento() {
+    //    public void setMontoMovimiento() {
 //        Scanner montoDinero = new Scanner(System.in);
 //        float cantidadCapital;
 //        System.out.println("ingrese el monto del movimiento: ");

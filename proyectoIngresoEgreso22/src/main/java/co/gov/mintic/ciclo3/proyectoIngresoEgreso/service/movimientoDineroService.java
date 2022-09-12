@@ -1,42 +1,36 @@
 package co.gov.mintic.ciclo3.proyectoIngresoEgreso.service;
 
 import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.movimientoDinero;
+import co.gov.mintic.ciclo3.proyectoIngresoEgreso.repository.IMovimientosRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class movimientoDineroService implements ImovimientoDineroService{
+    @Autowired
+    public IMovimientosRepository movimientosRepository;
     @Override
     public movimientoDinero findById(long id) {
-        movimientoDinero byIdMovimiento = new movimientoDinero();
-        byIdMovimiento.setMontoMovimiento(23414);
-        byIdMovimiento.setIdEmpleadoMovimiento(1);
-        byIdMovimiento.setMontoPositivo(121);
-        byIdMovimiento.setMontoNegativo(-13);
-        return byIdMovimiento;
+        Optional<movimientoDinero> byIdMovimiento = movimientosRepository.findById(id);
+        return byIdMovimiento.get();
     }
 
     @Override
     public movimientoDinero CreateNuevoMovimiento(movimientoDinero movimientoDinero2, long id) {
-        movimientoDinero create = new movimientoDinero();
-        create.setMontoMovimiento(movimientoDinero2.getMontoMovimiento());
-        create.setIdEmpleadoMovimiento(movimientoDinero2.getIdEmpleadoMovimiento());
-        create.setMontoPositivo(movimientoDinero2.getMontoPositivo());
-        create.setMontoNegativo(movimientoDinero2.getMontoNegativo());
+        movimientoDinero create = movimientosRepository.save(movimientoDinero2);
         return create;
     }
 
     @Override
     public movimientoDinero updateMovimiento(long id, movimientoDinero nuevoMovimiento) {
-        movimientoDinero  update = new movimientoDinero();
-        update.setMontoMovimiento(nuevoMovimiento.getMontoMovimiento());
-        update.setIdEmpleadoMovimiento(nuevoMovimiento.getIdEmpleadoMovimiento());
-        update.setMontoPositivo(nuevoMovimiento.getMontoPositivo());
-        update.setMontoNegativo(nuevoMovimiento.getMontoNegativo());
+        movimientoDinero  update = movimientosRepository.save(nuevoMovimiento);
         return update;
     }
 
     @Override
     public void deleteMovimiento(long id) {
-        movimientoDinero deleteFull = findById(id);
+        movimientosRepository.deleteById(id);
     }
 }

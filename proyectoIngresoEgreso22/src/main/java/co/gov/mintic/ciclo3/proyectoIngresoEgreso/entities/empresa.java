@@ -7,27 +7,44 @@ import javax.persistence.*;
 @Table(name = "empresa") //se crea la tabla en base de datos
 public class empresa {
     @Id
-    @Column(name = "nombre_empresa", nullable = false)
-    private String nombreEmpresa;
-    @Column(name = "direccion", nullable = false)
-    private String direccion;
-    @Column(name = "telefono", nullable = false)
-    private String telefono;
-    @Column(name = "nit", nullable = false)
-    private String NIT;
-    @Column(name = "idAdministrador", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_empresa")
     private long idAdministrador;
+    @Column(name = "nombre_empresa")
+    private String nombreEmpresa;
+    @Column(name = "direccion")
+    private String direccion;
+    @Column(name = "telefono")
+    private String telefono;
+    @Column(name = "nit")
+    private String NIT;
 
-    public empresa(String nombreEmpresa, String direccion, String telefono, String NIT, long idAdministrador) {
+    @Column(name = "id_login_empresa")
+    private long idLogeoEmpresa;
+    @ManyToOne
+    @JoinColumn
+    private idRol rol;
+
+    public empresa(long idAdministrador, String nombreEmpresa, String direccion, String telefono, String NIT, long idLogeoEmpresa, idRol rol) {
+        this.idAdministrador = idAdministrador;
         this.nombreEmpresa = nombreEmpresa;
         this.direccion = direccion;
         this.telefono = telefono;
         this.NIT = NIT;
-        this.idAdministrador = idAdministrador;
+        this.idLogeoEmpresa = idLogeoEmpresa;
+        this.rol = rol;
     }
 
     public empresa() {
 
+    }
+
+    public long getIdAdministrador() {
+        return idAdministrador;
+    }
+
+    public void setIdAdministrador(long idAdministrador) {
+        this.idAdministrador = idAdministrador;
     }
 
     public String getNombreEmpresa() {
@@ -62,26 +79,37 @@ public class empresa {
         this.NIT = NIT;
     }
 
-    public long getIdAdministrador() {
-        return idAdministrador;
+    public long getIdLogeoEmpresa() {
+        return idLogeoEmpresa;
     }
 
-    public void setIdAdministrador(long idAdministrador) {
-        this.idAdministrador = idAdministrador;
+    public void setIdLogeoEmpresa(long idLogeoEmpresa) {
+        this.idLogeoEmpresa = idLogeoEmpresa;
+    }
+
+    public idRol getRol() {
+        return rol;
+    }
+
+    public void setRol(idRol rol) {
+        this.rol = rol;
     }
 
     @Override
     public String toString() {
         return "empresa{" +
-                "nombreEmpresa='" + nombreEmpresa + '\'' +
+                "idAdministrador=" + idAdministrador +
+                ", nombreEmpresa='" + nombreEmpresa + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", NIT='" + NIT + '\'' +
-                ", idAdministrador=" + idAdministrador +
+                ", idLogeoEmpresa=" + idLogeoEmpresa +
+                ", rol=" + rol +
                 '}';
     }
 
-//    public void setNombreEmpresa() {
+
+    //    public void setNombreEmpresa() {
 //        Scanner name = new Scanner(System.in);
 //        String name1;
 //        System.out.println("ingrese nombre empresa: ");

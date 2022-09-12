@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+//Todas las actualizaciones estan funcionando de forma correcta
 @RestController
 @RequestMapping("/api")
 public class empleadoRestController {
@@ -20,21 +20,21 @@ public class empleadoRestController {
     }
     @PostMapping("/users")
     public empleado createEmpleado(@RequestBody empleado crearEmpleado){
-        return serviciosEmpleado.createEmpleado(crearEmpleado);
+        return this.serviciosEmpleado.createEmpleado(crearEmpleado);
     }
-    @GetMapping("/users/[id]")
+    @GetMapping("/users/{id}")
     public empleado findById(@PathVariable long id) {
-        return serviciosEmpleado.findById(id);
+        return this.serviciosEmpleado.findById(id);
     }
 
-    @PutMapping("/users/[id]")
+    @PutMapping("/users/{id}")
     public empleado updateEmpleado(@PathVariable long id, @RequestBody empleado datosEmpleado){
         return serviciosEmpleado.updateEmpleado(id, datosEmpleado);
     }
 
 
-    @DeleteMapping("/users/[id]")
+    @DeleteMapping("/users/{id}")
     public void deleteEmpresa(@PathVariable long id){
-        serviciosEmpleado.deleteEmpresa(id);
+        this.serviciosEmpleado.deleteEmpresa(id);
     }
 }

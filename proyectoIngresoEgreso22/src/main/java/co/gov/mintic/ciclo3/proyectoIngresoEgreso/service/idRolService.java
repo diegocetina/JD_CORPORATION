@@ -2,57 +2,45 @@ package co.gov.mintic.ciclo3.proyectoIngresoEgreso.service;
 
 
 import co.gov.mintic.ciclo3.proyectoIngresoEgreso.entities.idRol;
+import co.gov.mintic.ciclo3.proyectoIngresoEgreso.repository.IRolRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class idRolService implements IidRolService{
 
+    @Autowired
+    private IRolRepository rolRepository;
     @Override
     public List<idRol> findAll() {
-        List<idRol> roles = new ArrayList<>();
-        idRol rol1 = new idRol();
-        rol1.setIdRol(1);
-        rol1.setDescripcion("Administrativo");
-        rol1.setEstado(true);
-        roles.add(rol1);
-        idRol rol2 = new idRol();
-        rol2.setIdRol(2);
-        rol2.setDescripcion("Operativo");
-        rol2.setEstado(true);
-        roles.add(rol2);
+        List<idRol> roles = (List<idRol>) rolRepository.findAll();
         return roles;
     }
 
     @Override
     public idRol createRol(idRol rol1) {
-        idRol newrol = new idRol();
-        newrol.setDescripcion(rol1.getDescripcion());
-        newrol.setEstado(rol1.isEstado());
+        idRol newrol = rolRepository.save(rol1);
         return newrol;
     }
 
     @Override
     public idRol findById(long id) {
-        idRol rol = new idRol();
-        rol.setIdRol(id);
-        rol.setDescripcion("Admin");
-        rol.setEstado(true);
-        return rol;
+        Optional<idRol> rol = rolRepository.findById(id);
+        return rol.get();
     }
 
     @Override
     public idRol updateRol(long id, idRol rol) {
-        idRol putRol = findById(id);
-        putRol.setDescripcion(rol.getDescripcion());
-        putRol.setEstado(rol.isEstado());
+        idRol putRol = rolRepository.save(rol);
         return putRol;
     }
 
     @Override
     public void deleteidRol(long id) {
-        idRol deleteRol = findById(id);
+        rolRepository.deleteById(id);
     }
 }

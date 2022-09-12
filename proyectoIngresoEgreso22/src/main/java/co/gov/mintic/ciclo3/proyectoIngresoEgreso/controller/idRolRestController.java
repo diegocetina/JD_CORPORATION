@@ -14,27 +14,21 @@ public class idRolRestController {
     @Autowired
     public idRolService rolService;
 
-    //Get en direccion (/entreprise)
-
     @GetMapping("/idUsers")
     public List<idRol> findAll(){
         return rolService.findAll();
     }
-    //create en direccion (/entreprise)
+
     @PostMapping("/idUsers")
     public idRol createRol(@RequestBody idRol rol1){
-
         return rolService.createRol(rol1);
     }
 
-    //Get en direccion (/entreprise/{id})
     @GetMapping("/idUsers/{id}")
     public idRol findById(@PathVariable long id){
 
         return rolService.findById(id);
     }
-
-    //put en direccion (/entreprise/{id})
 
     @PutMapping("/idUsers/{id}")
     public idRol updateRol(@PathVariable long id, @RequestBody idRol rol){
@@ -46,6 +40,5 @@ public class idRolRestController {
     public void deleteidRol(@PathVariable long id){
         rolService.deleteidRol(id);
     }
-
 
 }
