@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Empleado</title>
+</head>
+<body>
+    <h1>Modificar y crear empleado</h1>
+    <form th:action ="@{/guardar}" method="post" th:object="${usuario}">
+        <label for="nombreEmpleado">Nombre Empleado</label>
+        <input type="text" name="nombreEmpleado" th:field="*{nombreEmpleado}"/>
+        <br>
+        <label for="correoEmpleado">Correo Empleado</label>
+        <input type="text" name="correoEmpleado" th:field="*{correo}"/>
+        <br>
+        <label for="empresaEmpleado">Empresa Empleado</label>
+        <input type="text" name="empresaEmpleado" th:field="*{empresaPerteneciente}"/>
+        <br>
+        <select>
+            <option value="0" selected>Seleccione Rol</option>
+            <option th:each="rol : ${roles}"
+                    th:value="${rol.idRol}"
+                    th:text="${rol.descripcion}"
+            ></option>
+        </select>
+    </form>
+
+</body>
+</html>
