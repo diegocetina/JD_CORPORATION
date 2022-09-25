@@ -38,7 +38,7 @@ public class empleadoService implements IEmpleadoService{
     }
 
     @Override
-    public void deleteEmpresa(long id) {
+    public void deleteEmpleado(long id) {
         empleadoRepository.deleteById(id);
     }
 }

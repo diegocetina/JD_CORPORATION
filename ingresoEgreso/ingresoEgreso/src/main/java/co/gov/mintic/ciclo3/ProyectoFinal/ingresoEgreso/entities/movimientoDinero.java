@@ -6,24 +6,31 @@ import javax.persistence.*;
 @Table(name = "movimiento_dinero") //se crea la tabla en base de datos@Entity
 public class movimientoDinero {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_movimiento")
     private long idmovimiento;
+
     @Column(name = "monto_movimiento", nullable = false)
     private float montoMovimiento;
+
     @Column(name = "monto_positivo")
     private float montoPositivo;
+
     @Column(name = "monto_negativo")
     private float montoNegativo;
-    @Column(name = "id_empleado_movimiento",nullable = false)
-    private long idEmpleadoMovimiento;
+
+    @Column(name = "username_empleado_movimiento",nullable = false)
+    private String idEmpleadoMovimiento;
+
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "idEmpleado")
     private empleado empleado;
+
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "empresa_empleado")
     private empresa empresa;
 
-    public movimientoDinero(long idmovimiento, float montoMovimiento, float montoPositivo, float montoNegativo, long idEmpleadoMovimiento, co.gov.mintic.ciclo3.ProyectoFinal.ingresoEgreso.entities.empleado empleado, co.gov.mintic.ciclo3.ProyectoFinal.ingresoEgreso.entities.empresa empresa) {
+    public movimientoDinero(long idmovimiento, float montoMovimiento, float montoPositivo, float montoNegativo, String idEmpleadoMovimiento, co.gov.mintic.ciclo3.ProyectoFinal.ingresoEgreso.entities.empleado empleado, co.gov.mintic.ciclo3.ProyectoFinal.ingresoEgreso.entities.empresa empresa) {
         this.idmovimiento = idmovimiento;
         this.montoMovimiento = montoMovimiento;
         this.montoPositivo = montoPositivo;
@@ -35,6 +42,14 @@ public class movimientoDinero {
 
     public movimientoDinero() {
 
+    }
+
+    public long getIdmovimiento() {
+        return idmovimiento;
+    }
+
+    public void setIdmovimiento(long idmovimiento) {
+        this.idmovimiento = idmovimiento;
     }
 
     public float getMontoMovimiento() {
@@ -61,11 +76,11 @@ public class movimientoDinero {
         this.montoNegativo = montoNegativo;
     }
 
-    public long getIdEmpleadoMovimiento() {
+    public String getIdEmpleadoMovimiento() {
         return idEmpleadoMovimiento;
     }
 
-    public void setIdEmpleadoMovimiento(long idEmpleadoMovimiento) {
+    public void setIdEmpleadoMovimiento(String idEmpleadoMovimiento) {
         this.idEmpleadoMovimiento = idEmpleadoMovimiento;
     }
 
@@ -85,18 +100,11 @@ public class movimientoDinero {
         this.empresa = empresa;
     }
 
-    public long getIdmovimiento() {
-        return idmovimiento;
-    }
-
-    public void setIdmovimiento(long idmovimiento) {
-        this.idmovimiento = idmovimiento;
-    }
-
     @Override
     public String toString() {
         return "movimientoDinero{" +
-                "montoMovimiento=" + montoMovimiento +
+                "idmovimiento=" + idmovimiento +
+                ", montoMovimiento=" + montoMovimiento +
                 ", montoPositivo=" + montoPositivo +
                 ", montoNegativo=" + montoNegativo +
                 ", idEmpleadoMovimiento=" + idEmpleadoMovimiento +

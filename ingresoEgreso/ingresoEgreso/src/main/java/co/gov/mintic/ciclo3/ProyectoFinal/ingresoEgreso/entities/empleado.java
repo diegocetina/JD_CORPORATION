@@ -2,6 +2,8 @@ package co.gov.mintic.ciclo3.ProyectoFinal.ingresoEgreso.entities;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "empleado") //se crea la tabla en base de datos@Entity
@@ -11,30 +13,41 @@ public class empleado {
     @Column(name = "id_empleado")
     private long idEmpleado;
 
+
     @Column(name = "nombres_empleado")
     private String nombreEmpleado;
-    @Column(name = "correo")
+
+
+    @Column(name = "correo", unique = true)
     private String correo;
+
     @Column(name = "empresa_perteneciente")
     private String empresaPerteneciente;
-    @Column(name = "id_Login_empleado")
-    private long idLogeo;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+
+    @Column(name = "username",unique = true)
+    private String username;
+
+
+    @Column(name = "password")
+    private String password;
+
+    @ManyToOne()
     @JoinColumn(name = "rol_id_rol")
     private idRol rol;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "empresa_id_empresa")
     private empresa empresa;
 
 
-    public empleado(long idEmpleado, String nombreEmpleado, String correo, String empresaPerteneciente, long idLogeo, idRol rol, co.gov.mintic.ciclo3.ProyectoFinal.ingresoEgreso.entities.empresa empresa) {
+    public empleado(long idEmpleado, String nombreEmpleado, String correo, String empresaPerteneciente, String username, String password, idRol rol, co.gov.mintic.ciclo3.ProyectoFinal.ingresoEgreso.entities.empresa empresa) {
         this.idEmpleado = idEmpleado;
         this.nombreEmpleado = nombreEmpleado;
         this.correo = correo;
         this.empresaPerteneciente = empresaPerteneciente;
-        this.idLogeo = idLogeo;
+        this.username = username;
+        this.password = password;
         this.rol = rol;
         this.empresa = empresa;
     }
@@ -74,12 +87,12 @@ public class empleado {
         this.empresaPerteneciente = empresaPerteneciente;
     }
 
-    public long getIdLogeo() {
-        return idLogeo;
+    public String getUsername() {
+        return username;
     }
 
-    public void setIdLogeo(long idLogeo) {
-        this.idLogeo = idLogeo;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public idRol getRol() {
@@ -98,6 +111,14 @@ public class empleado {
         this.empresa = empresa;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "empleado{" +
@@ -105,7 +126,8 @@ public class empleado {
                 ", nombreEmpleado='" + nombreEmpleado + '\'' +
                 ", correo='" + correo + '\'' +
                 ", empresaPerteneciente='" + empresaPerteneciente + '\'' +
-                ", idLogeo=" + idLogeo +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", rol=" + rol +
                 ", empresa=" + empresa +
                 '}';

@@ -13,5 +13,5 @@ public interface IEmpleadoService {
 
     public empleado updateEmpleado( long id, empleado datosEmpleado);
 
-    public void deleteEmpresa(long id);
+    public void deleteEmpleado(long id);
 }

@@ -1,6 +1,7 @@
 package co.gov.mintic.ciclo3.ProyectoFinal.ingresoEgreso.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 
 @Entity
@@ -10,29 +11,40 @@ public class empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_empresa")
     private long idAdministrador;
+
+
     @Column(name = "nombre_empresa")
     private String nombreEmpresa;
+
+
     @Column(name = "direccion")
     private String direccion;
+
+
     @Column(name = "telefono")
     private String telefono;
+
+
     @Column(name = "nit")
     private String NIT;
 
-    @Column(name = "id_login_empresa")
-    private long idLogeoEmpresa;
-    @ManyToOne
-    @JoinColumn
-    private idRol rol;
 
-    public empresa(long idAdministrador, String nombreEmpresa, String direccion, String telefono, String NIT, long idLogeoEmpresa, idRol rol) {
+    @Column(name = "login_empresa")
+    private String idLogeoEmpresa;
+
+
+    @Column(name = "password")
+    private String password;
+
+
+    public empresa(long idAdministrador, String nombreEmpresa, String direccion, String telefono, String NIT, String idLogeoEmpresa, String password) {
         this.idAdministrador = idAdministrador;
         this.nombreEmpresa = nombreEmpresa;
         this.direccion = direccion;
         this.telefono = telefono;
         this.NIT = NIT;
         this.idLogeoEmpresa = idLogeoEmpresa;
-        this.rol = rol;
+        this.password = password;
     }
 
     public empresa() {
@@ -79,21 +91,23 @@ public class empresa {
         this.NIT = NIT;
     }
 
-    public long getIdLogeoEmpresa() {
+    public String getIdLogeoEmpresa() {
         return idLogeoEmpresa;
     }
 
-    public void setIdLogeoEmpresa(long idLogeoEmpresa) {
+    public void setIdLogeoEmpresa(String idLogeoEmpresa) {
         this.idLogeoEmpresa = idLogeoEmpresa;
     }
 
-    public idRol getRol() {
-        return rol;
+    public String getPassword() {
+        return password;
     }
 
-    public void setRol(idRol rol) {
-        this.rol = rol;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+
 
     @Override
     public String toString() {
@@ -104,10 +118,9 @@ public class empresa {
                 ", telefono='" + telefono + '\'' +
                 ", NIT='" + NIT + '\'' +
                 ", idLogeoEmpresa=" + idLogeoEmpresa +
-                ", rol=" + rol +
+                ", password='" + password + '\'' +
                 '}';
     }
-
 
     //    public void setNombreEmpresa() {
 //        Scanner name = new Scanner(System.in);
